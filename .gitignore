@@ -1,0 +1,9 @@
+*.swo
+*.swp
+src/*
+archive/*
+build/*
+downloads/*
+diff/*
+dist/*
+.env
