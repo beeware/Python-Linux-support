@@ -1,0 +1,8 @@
+# Contributing
+
+BeeWare <3's contributions!
+
+Please be aware, BeeWare operates under a Code of Conduct.
+
+See [CONTRIBUTING to BeeWare](BeeWare.org/contributing) for details.
+
