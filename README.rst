@@ -36,6 +36,7 @@ This will:
 4. Install the sources
 5. Strip out parts that add significant bulk, but limited utility for embedded
    applications:
+
    * ``2to3``, ``pip``, ``pydoc``, and ``python-configure`` binaries
    * include files
    * man pages
@@ -44,6 +45,7 @@ This will:
    * ``tkinter``
    * ``curses``
    * ``turtle``
+
 6. Build a tarball of the installed output.
 
 The build products will be in the `build` directory; the distributable tarball
