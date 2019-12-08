@@ -63,7 +63,7 @@ build/python/VERSIONS: dependencies
 	echo "OpenSSL: $$(awk '$$2=="openssl" { print $$3 }' downloads/system.versions)" >> build/python/VERSIONS
 	echo "XZ: $$(awk '$$2=="liblzma5:amd64" { print $$3 }' downloads/system.versions)" >> build/python/VERSIONS
 
-dist/Python-$(PYTHON_VER)-Linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz: dist build/python/bin/python$(PYTHON_VER)m build/python/VERSIONS
+dist/Python-$(PYTHON_VER)-linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz: dist build/python/bin/python$(PYTHON_VER)m build/python/VERSIONS
 	tar zcvf $@ -X exclude.list -C build/python `ls -A build/python`
 
-Python: dist/Python-$(PYTHON_VER)-Linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz
+Python: dist/Python-$(PYTHON_VER)-linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz
