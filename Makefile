@@ -6,8 +6,11 @@ BUILD_NUMBER=1
 # Version of packages that will be compiled by this meta-package
 PYTHON_VERSION=3.5.9
 PYTHON_VER=$(basename $(PYTHON_VERSION))
+ARCH=$(shell uname -m)
 
-all: Python
+all:
+	docker build -t beeware/python-linux-$(ARCH)-support .
+	docker run -it -v $(PROJECT_DIR)/downloads:/local/downloads -v $(PROJECT_DIR)/dist:/local/dist beeware/python-linux-$(ARCH)-support
 
 # Clean all builds
 clean:
@@ -18,7 +21,6 @@ distclean: clean
 	rm -rf downloads
 
 dependencies:
-	sudo apt-get install openssl liblzma5 bzip2
 	dpkg -l > downloads/system.versions
 
 downloads: downloads/Python-$(PYTHON_VERSION).tgz dependencies
@@ -61,7 +63,7 @@ build/python/VERSIONS: dependencies
 	echo "OpenSSL: $$(awk '$$2=="openssl" { print $$3 }' downloads/system.versions)" >> build/python/VERSIONS
 	echo "XZ: $$(awk '$$2=="liblzma5:amd64" { print $$3 }' downloads/system.versions)" >> build/python/VERSIONS
 
-dist/Python-$(PYTHON_VER)-Linux-support.b$(BUILD_NUMBER).tar.gz: dist build/python/bin/python$(PYTHON_VER)m build/python/VERSIONS
+dist/Python-$(PYTHON_VER)-Linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz: dist build/python/bin/python$(PYTHON_VER)m build/python/VERSIONS
 	tar zcvf $@ -X exclude.list -C build/python `ls -A build/python`
 
-Python: dist/Python-$(PYTHON_VER)-Linux-support.b$(BUILD_NUMBER).tar.gz
+Python: dist/Python-$(PYTHON_VER)-Linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz

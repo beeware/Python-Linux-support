@@ -11,16 +11,22 @@ into a Linux AppImage.
 It works by downloading and building the standard Python sources, after
 ensuring that key system libraries are installed. It installs the compiled
 Python into a temporary prefix location, strips out parts that aren't needed,
-and packages the result.
+and packages the result. The output of this project is an analog of the
+"embedded" Windows distribution that is officially provided by the Python
+project.
 
 Quickstart
 ----------
 
-A version of this package, compiled on Ubuntu 16.04, `is available`_.
+A version of this package, compiled on Ubuntu 16.04, is available for `x86_64`_.
 
-If you want to build your own version, run::
+If you want to build your own version, you will need to have Docker installed.
+After installing docker, run::
 
     $ make
+
+    $ docker build -t beeware/Python-Linux-support .
+    $ docker run -it -v `pwd`/downloads:/local/downloads -v `pwd`/dist:/local/dist beeware/Python-Linux-support
 
 This will:
 
@@ -28,10 +34,19 @@ This will:
 2. Download the original Python source package
 3. Configure and build the Python sources
 4. Install the sources
-5. Strip out unnecesarry parts (e.g., testing code, includes and man pages)
+5. Strip out parts that add significant bulk, but limited utility for embedded
+   applications:
+   * ``2to3``, ``pip``, ``pydoc``, and ``python-configure`` binaries
+   * include files
+   * man pages
+   * Testing code
+   * ``idle``
+   * ``tkinter``
+   * ``curses``
+   * ``turtle``
 6. Build a tarball of the installed output.
 
 The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
-.. _is available: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.5/linux/Python-3.5-Linux-support.b1.tar.gz
+.. _x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.5/linux/Python-3.5-Linux-x86_64-support.b1.tar.gz

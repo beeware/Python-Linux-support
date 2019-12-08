@@ -3,7 +3,6 @@ bin/idle3*
 bin/pydoc3*
 bin/python3*-config
 bin/pyvenv*
-include
 lib/python3.5/config-*
 lib/python3.5/ctypes/test
 lib/python3.5/curses
@@ -20,5 +19,4 @@ lib/python3.5/turtle.py
 lib/python3.5/turtledemo
 lib/python3.5/unittest/test
 lib/python3.5/wsgiref
-lib/python3.5/xmlrpc
 share
