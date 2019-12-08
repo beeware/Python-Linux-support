@@ -39,16 +39,17 @@ def upload(build, directory, s3_client):
             filenames.append((filename, full_filename))
 
     for i, (filename, full_filename) in enumerate(filenames):
-            py, version, platform, *remainder = filename.split('-')
+            py, version, platform, arch, remainder = filename.split('-')
             sys.stdout.write("[%s/%s] %s..." % (i + 1, len(filenames), filename))
             sys.stdout.flush()
             with open(full_filename, 'rb') as data:
                 s3_client.upload_fileobj(
                     data,
                     'briefcase-support',
-                    'python/%s/%s/%s' % (
+                    'python/%s/%s/%s/%s' % (
                         version,
                         platform,
+                        arch,
                         filename
                     ),
                     Callback=Progress(i+1, len(filenames), full_filename)
