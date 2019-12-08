@@ -4,7 +4,7 @@ PROJECT_DIR=$(shell pwd)
 BUILD_NUMBER=1
 
 # Version of packages that will be compiled by this meta-package
-PYTHON_VERSION=3.5.9
+PYTHON_VERSION=3.6.6
 PYTHON_VER=$(basename $(PYTHON_VERSION))
 ARCH=$(shell uname -m)
 
