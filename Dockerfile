@@ -6,7 +6,7 @@ FROM ubuntu:16.04
 # Install the build requirements for Python.
 RUN apt-get update -y && \
     apt-get install -y gcc make curl \
-        libssl-dev libsqlite3-dev liblzma-dev libbz2-dev libgdbm-dev
+        libssl-dev libsqlite3-dev liblzma-dev libbz2-dev libgdbm-dev libffi-dev
 
 # Install the Makefile and exclude list, and build Python.
 # This Makefile will assume there are two external mountpoints:
