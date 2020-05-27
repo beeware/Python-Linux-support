@@ -17,4 +17,4 @@ RUN apt-get update -y && \
 COPY Makefile local/Makefile
 COPY exclude.list local/exclude.list
 WORKDIR /local
-CMD ["make", "Python"]
+CMD ["make", "-e", "Python"]
