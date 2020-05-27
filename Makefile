@@ -10,7 +10,7 @@ ARCH=$(shell uname -m)
 
 all:
 	docker build -t beeware/python-linux-$(ARCH)-support .
-	docker run -it -v $(PROJECT_DIR)/downloads:/local/downloads -v $(PROJECT_DIR)/dist:/local/dist beeware/python-linux-$(ARCH)-support
+	docker run -v $(PROJECT_DIR)/downloads:/local/downloads -v $(PROJECT_DIR)/dist:/local/dist beeware/python-linux-$(ARCH)-support
 
 # Clean all builds
 clean:
