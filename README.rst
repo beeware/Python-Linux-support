@@ -25,9 +25,6 @@ After installing docker, run::
 
     $ make
 
-    $ docker build -t beeware/Python-Linux-support .
-    $ docker run -it -v `pwd`/downloads:/local/downloads -v `pwd`/dist:/local/dist beeware/Python-Linux-support
-
 This will:
 
 1. Ensure that the system dependencies required to build Python are up to date.
@@ -51,4 +48,8 @@ This will:
 The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
+<<<<<<< HEAD
 .. _x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.5/linux/Python-3.5-Linux-x86_64-support.b1.tar.gz
+=======
+.. _x86_64: https://briefcase-support.org/python?version=3.8&platform=linux&arch=x86_64
+>>>>>>> Fixed the exclude list.
