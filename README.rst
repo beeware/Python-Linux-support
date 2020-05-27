@@ -49,7 +49,11 @@ The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .. _x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.7/linux/Python-3.7-Linux-x86_64-support.b1.tar.gz
 =======
 .. _x86_64: https://briefcase-support.org/python?version=3.8&platform=linux&arch=x86_64
 >>>>>>> Fixed the exclude list.
+=======
+.. _x86_64: https://briefcase-support.org/python?version=3.8&platform=linux&arch=x86_64
+>>>>>>> dev

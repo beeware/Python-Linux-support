@@ -9,8 +9,9 @@ PYTHON_VER=$(basename $(PYTHON_VERSION))
 ARCH=$(shell uname -m)
 
 all:
+	@echo "***** Building $(PYTHON_VERSION) $(ARCH) build $(BUILD_NUMBER) *****"
 	docker build -t beeware/python-linux-$(ARCH)-support .
-	docker run -it -v $(PROJECT_DIR)/downloads:/local/downloads -v $(PROJECT_DIR)/dist:/local/dist beeware/python-linux-$(ARCH)-support
+	docker run -e BUILD_NUMBER=$(BUILD_NUMBER) -v $(PROJECT_DIR)/downloads:/local/downloads -v $(PROJECT_DIR)/dist:/local/dist beeware/python-linux-$(ARCH)-support
 
 # Clean all builds
 clean:
@@ -41,6 +42,7 @@ dist:
 	mkdir dist
 
 build/Python-$(PYTHON_VERSION)/Makefile: build downloads
+	@echo "***** Building $(PYTHON_VERSION) $(ARCH) build $(BUILD_NUMBER) *****"
 	# Unpack target Python
 	cd build && tar zxf ../downloads/Python-$(PYTHON_VERSION).tgz
 
@@ -60,7 +62,7 @@ build/python/VERSIONS: dependencies
 	echo "OpenSSL: $$(awk '$$2=="openssl" { print $$3 }' downloads/system.versions)" >> build/python/VERSIONS
 	echo "XZ: $$(awk '$$2=="liblzma5:amd64" { print $$3 }' downloads/system.versions)" >> build/python/VERSIONS
 
-dist/Python-$(PYTHON_VER)-linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz: dist build/python/bin/python$(PYTHON_VER)m build/python/VERSIONS
+dist/Python-$(PYTHON_VER)-linux-$(ARCH)-support.$(BUILD_NUMBER).tar.gz: dist build/python/bin/python$(PYTHON_VER)m build/python/VERSIONS
 	tar zcvf $@ -X exclude.list -C build/python `ls -A build/python`
 
-Python: dist/Python-$(PYTHON_VER)-linux-$(ARCH)-support.b$(BUILD_NUMBER).tar.gz
+Python: dist/Python-$(PYTHON_VER)-linux-$(ARCH)-support.$(BUILD_NUMBER).tar.gz
