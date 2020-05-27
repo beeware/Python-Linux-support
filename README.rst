@@ -1,7 +1,7 @@
 Python Linux Support
 ====================
 
-**This repository branch builds a packaged version of Python 3.7.5**.
+**This repository branch builds a packaged version of Python 3.7.6**.
 Other Python versions are available by cloning other branches of the main
 repository.
 
