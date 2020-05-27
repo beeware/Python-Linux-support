@@ -11,7 +11,7 @@ ARCH=$(shell uname -m)
 all:
 	@echo "***** Building $(PYTHON_VERSION) $(ARCH) build $(BUILD_NUMBER) *****"
 	docker build -t beeware/python-linux-$(ARCH)-support .
-	docker run -v $(PROJECT_DIR)/downloads:/local/downloads -v $(PROJECT_DIR)/dist:/local/dist beeware/python-linux-$(ARCH)-support
+	docker run -e BUILD_NUMBER=$(BUILD_NUMBER) -v $(PROJECT_DIR)/downloads:/local/downloads -v $(PROJECT_DIR)/dist:/local/dist beeware/python-linux-$(ARCH)-support
 
 # Clean all builds
 clean:
@@ -42,6 +42,7 @@ dist:
 	mkdir dist
 
 build/Python-$(PYTHON_VERSION)/Makefile: build downloads
+	@echo "***** Building $(PYTHON_VERSION) $(ARCH) build $(BUILD_NUMBER) *****"
 	# Unpack target Python
 	cd build && tar zxf ../downloads/Python-$(PYTHON_VERSION).tgz
 
