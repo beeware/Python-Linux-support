@@ -1,7 +1,7 @@
 # Current director
 PROJECT_DIR=$(shell pwd)
 
-BUILD_NUMBER=2
+BUILD_NUMBER=custom
 
 # Version of packages that will be compiled by this meta-package
 PYTHON_VERSION=3.7.5
@@ -24,9 +24,6 @@ dependencies:
 	dpkg -l > downloads/system.versions
 
 downloads: downloads/Python-$(PYTHON_VERSION).tgz dependencies
-
-upload: $(foreach os,$(OS),$(os))
-	python tools/upload.py b$(BUILD_NUMBER)
 
 ###########################################################################
 # Python
