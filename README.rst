@@ -1,7 +1,7 @@
 Python Linux Support
 ====================
 
-**This repository branch builds a packaged version of Python 3.7.7**.
+**This repository branch builds a packaged version of Python 3.7.9**.
 Other Python versions are available by cloning other branches of the main
 repository.
 
@@ -48,12 +48,4 @@ This will:
 The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-.. _x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.7/linux/Python-3.7-Linux-x86_64-support.b1.tar.gz
-=======
-.. _x86_64: https://briefcase-support.org/python?version=3.8&platform=linux&arch=x86_64
->>>>>>> Fixed the exclude list.
-=======
-.. _x86_64: https://briefcase-support.org/python?version=3.8&platform=linux&arch=x86_64
->>>>>>> dev
+.. _x86_64: https://briefcase-support.org/python?version=3.7&platform=linux&arch=x86_64
