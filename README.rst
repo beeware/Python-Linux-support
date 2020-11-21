@@ -1,6 +1,8 @@
 Python Linux Support
 ====================
 
+**Python 3.5 has reached End Of Life. This repository branch is no longer maintained.**
+
 **This repository branch builds a packaged version of Python 3.5.9**.
 Other Python versions are available by cloning other branches of the main
 repository.
