@@ -1,7 +1,7 @@
 Python Linux Support
 ====================
 
-**This repository branch builds a packaged version of Python 3.6.10**.
+**This repository branch builds a packaged version of Python 3.6.12**.
 Other Python versions are available by cloning other branches of the main
 repository.
 
@@ -48,8 +48,4 @@ This will:
 The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
-<<<<<<< HEAD
-.. _x86_64: https://briefcase-support.s3-us-west-2.amazonaws.com/python/3.6/linux/Python-3.6-Linux-x86_64-support.b1.tar.gz
-=======
-.. _x86_64: https://briefcase-support.org/python?version=3.8&platform=linux&arch=x86_64
->>>>>>> dev
+.. _x86_64: https://briefcase-support.org/python?version=3.6&platform=linux&arch=x86_64
