@@ -1,7 +1,7 @@
 Python Linux Support
 ====================
 
-**This is the development version of the repository. It builds a packaged version of Python 3.9.0**.
+**This repository branch builds a packaged version of Python 3.9.0**.
 Other Python versions are available by cloning other branches of the main
 repository.
 
