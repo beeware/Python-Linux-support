@@ -1,7 +1,7 @@
 Python Linux Support
 ====================
 
-**This is the development version of the repository. It builds a packaged version of Python 3.9.0**.
+**This is the development version of the repository. It builds a packaged version of Python 3.10.0**.
 Other Python versions are available by cloning other branches of the main
 repository.
 
@@ -18,7 +18,7 @@ project.
 Quickstart
 ----------
 
-A version of this package, compiled on Ubuntu 16.04, is available for `x86_64`_.
+A version of this package, compiled on Ubuntu 18.04, is available for `x86_64`_.
 
 If you want to build your own version, you will need to have Docker installed.
 After installing docker, run::
@@ -48,4 +48,4 @@ This will:
 The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
-.. _x86_64: https://briefcase-support.org/python?version=3.9&platform=linux&arch=x86_64
+.. _x86_64: https://briefcase-support.org/python?version=3.10&platform=linux&arch=x86_64
