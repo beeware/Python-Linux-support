@@ -1,7 +1,7 @@
 Python Linux Support
 ====================
 
-**This is the development version of the repository. It builds a packaged version of Python 3.10.0**.
+**This is the development version of the repository. It builds a packaged version of Python 3.11.0b3**.
 Other Python versions are available by cloning other branches of the main
 repository.
 
@@ -35,12 +35,10 @@ This will:
    applications:
 
    * ``2to3``, ``pip``, ``pydoc``, and ``python-configure`` binaries
-   * include files
    * man pages
    * Testing code
    * ``idle``
    * ``tkinter``
-   * ``curses``
    * ``turtle``
 
 6. Build a tarball of the installed output.
@@ -48,4 +46,4 @@ This will:
 The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
-.. _x86_64: https://briefcase-support.org/python?version=3.10&platform=linux&arch=x86_64
+.. _x86_64: https://briefcase-support.org/python?version=3.11&platform=linux&arch=x86_64

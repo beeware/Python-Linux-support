@@ -4,8 +4,13 @@ PROJECT_DIR=$(shell pwd)
 BUILD_NUMBER=custom
 
 # Version of packages that will be compiled by this meta-package
-PYTHON_VERSION=3.10.0
+# PYTHON_VERSION is the full version number (e.g., 3.10.0b3)
+# PYTHON_MICRO_VERSION is the full version number, without any alpha/beta/rc suffix. (e.g., 3.10.0)
+# PYTHON_VER is the major/minor version (e.g., 3.10)
+PYTHON_VERSION=3.11.0b3
+PYTHON_MICRO_VERSION=$(shell echo $(PYTHON_VERSION) | grep -Po "\d+\.\d+\.\d+")
 PYTHON_VER=$(basename $(PYTHON_VERSION))
+
 ARCH=$(shell uname -m)
 
 all:
@@ -17,7 +22,7 @@ all:
 		-v $(PROJECT_DIR)/downloads:/local/downloads \
 		-v $(PROJECT_DIR)/dist:/local/dist \
 		-v $(PROJECT_DIR)/build:/local/build \
-		beeware/python-linux-$(ARCH)-support:$(PYTHON_VER)
+		beeware/python-linux-$(ARCH)-support
 
 # Clean all builds
 clean:
@@ -39,7 +44,10 @@ downloads: downloads/Python-$(PYTHON_VERSION).tgz dependencies
 # Download original Python source code archive.
 downloads/Python-$(PYTHON_VERSION).tgz:
 	mkdir -p downloads
-	if [ ! -e downloads/Python-$(PYTHON_VERSION).tgz ]; then curl -L https://www.python.org/ftp/python/$(PYTHON_VERSION)/Python-$(PYTHON_VERSION).tgz > downloads/Python-$(PYTHON_VERSION).tgz; fi
+	if [ ! -e downloads/Python-$(PYTHON_VERSION).tgz ]; then \
+		curl --fail -L https://www.python.org/ftp/python/$(PYTHON_MICRO_VERSION)/Python-$(PYTHON_VERSION).tgz \
+			-o downloads/Python-$(PYTHON_VERSION).tgz; \
+	fi
 
 build:
 	mkdir build
