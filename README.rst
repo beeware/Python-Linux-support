@@ -1,7 +1,7 @@
 Python Linux Support
 ====================
 
-**This repository branch builds a packaged version of Python 3.7.9**.
+**This repository branch builds a packaged version of Python 3.7.13**.
 Other Python versions are available by cloning other branches of the main
 repository.
 
@@ -18,7 +18,7 @@ project.
 Quickstart
 ----------
 
-A version of this package, compiled on Ubuntu 16.04, is available for `x86_64`_.
+A version of this package, compiled on Ubuntu 18.04, is available for `x86_64`_.
 
 If you want to build your own version, you will need to have Docker installed.
 After installing docker, run::
@@ -35,12 +35,10 @@ This will:
    applications:
 
    * ``2to3``, ``pip``, ``pydoc``, and ``python-configure`` binaries
-   * include files
    * man pages
    * Testing code
    * ``idle``
    * ``tkinter``
-   * ``curses``
    * ``turtle``
 
 6. Build a tarball of the installed output.
