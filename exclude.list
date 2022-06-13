@@ -8,8 +8,6 @@ bin/idle3*
 bin/pydoc3*
 bin/python3*-config
 bin/pyvenv*
-# Remove include/ directory, only useful for compiling C extension modules.
-include
 # Remove standard library test suites.
 lib/python*/ctypes/test
 lib/python*/distutils/tests
@@ -21,8 +19,6 @@ lib/python*/lib-dynload/_test*.so
 lib/python*/lib-dynload/_ctypes_test*.so
 lib/python*/lib-dynload/xxlimited*.so
 lib/python*/lib-dynload/_xxtestfuzz.so
-# Remove command-line curses toolkit.
-lib/python*/curses/*
 # Remove config-* directory, which is used for compiling C extension modules.
 lib/python*/config-*
 # Remove ensurepip. If user code needs pip, it can add it to
