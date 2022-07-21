@@ -78,6 +78,9 @@ build/python/bin/python$(PYTHON_VER): build/Python-$(PYTHON_VERSION)/python.exe
 	cd build/Python-$(PYTHON_VERSION) && \
 		make install \
 			2>&1 | tee -a ../python-$(PYTHON_VERSION).install.log
+	# Make the binary and libpython3.so relocatable
+	patchelf --set-rpath "\$$ORIGIN/../lib" build/python/bin/python$(PYTHON_VER)
+	patchelf --set-rpath "\$$ORIGIN" build/python/lib/libpython3.so
 
 build/python/VERSIONS: dependencies
 	echo "Python version: $(PYTHON_VERSION) " > build/python/VERSIONS
