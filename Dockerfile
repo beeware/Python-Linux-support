@@ -6,7 +6,7 @@ FROM ubuntu:18.04
 # Install the build requirements for Python.
 RUN apt-get update -y && \
     apt-get install -y \
-        gcc make curl \
+        gcc make patchelf curl \
         libbz2-dev \
         libffi-dev \
         libgdbm-compat-dev \
