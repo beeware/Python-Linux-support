@@ -7,7 +7,7 @@ BUILD_NUMBER=custom
 # PYTHON_VERSION is the full version number (e.g., 3.10.0b3)
 # PYTHON_MICRO_VERSION is the full version number, without any alpha/beta/rc suffix. (e.g., 3.10.0)
 # PYTHON_VER is the major/minor version (e.g., 3.10)
-PYTHON_VERSION=3.8.13
+PYTHON_VERSION=3.8.15
 PYTHON_MICRO_VERSION=$(shell echo $(PYTHON_VERSION) | grep -Po "\d+\.\d+\.\d+")
 PYTHON_VER=$(basename $(PYTHON_VERSION))
 
@@ -65,7 +65,6 @@ build/Python-$(PYTHON_VERSION)/Makefile: build downloads
 		--prefix=$(PROJECT_DIR)/build/python \
 		--enable-ipv6 \
 		--enable-shared \
-		--without-doc-strings \
 		--without-ensurepip \
 		2>&1 | tee -a ../python-$(PYTHON_VERSION).config.log
 
