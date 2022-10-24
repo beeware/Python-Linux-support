@@ -1,12 +1,17 @@
 Python Linux Support
 ====================
 
-**This repository branch builds a packaged version of Python 3.9.13**.
-Other Python versions are available by cloning other branches of the main
-repository.
-
 This is a meta-package for building a version of Python that can be embedded
 into a Linux AppImage.
+
+**This branch builds a packaged version of Python 3.9.15**.
+Other Python versions are available by cloning other branches of the main
+repository:
+
+* `Python 3.8 <https://github.com/beeware/Python-Linux-support/tree/3.8>`__
+* `Python 3.9 <https://github.com/beeware/Python-Linux-support/tree/3.9>`__
+* `Python 3.10 <https://github.com/beeware/Python-Linux-support/tree/3.10>`__
+* `Python 3.11 <https://github.com/beeware/Python-Linux-support/tree/3.11>`__
 
 It works by downloading and building the standard Python sources, after
 ensuring that key system libraries are installed. It installs the compiled
@@ -46,4 +51,4 @@ This will:
 The build products will be in the `build` directory; the distributable tarball
 will be in the `dist` directory.
 
-.. _x86_64: https://briefcase-support.org/python?version=3.9&platform=linux&arch=x86_64
+.. _x86_64: https://briefcase-support.s3.amazonaws.com/python/3.9/linux/x86_64/Python-3.9-macOS-support.b1.tar.gz
