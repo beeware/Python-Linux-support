@@ -65,7 +65,6 @@ build/Python-$(PYTHON_VERSION)/Makefile: build downloads
 		--prefix=$(PROJECT_DIR)/build/python \
 		--enable-ipv6 \
 		--enable-shared \
-		--without-doc-strings \
 		--without-ensurepip \
 		2>&1 | tee -a ../python-$(PYTHON_VERSION).config.log
 
