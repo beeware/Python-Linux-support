@@ -1,3 +1,5 @@
+**NOTE: This project has been deprecated** Briefcase now uses `indygreg's Standalone Python <http://github.com/indygreg/python-build-standalone>`__
+
 Python Linux Support
 ====================
 
